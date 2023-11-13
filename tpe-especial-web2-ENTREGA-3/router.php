@@ -9,7 +9,7 @@
     //                 endpoint          verbo     controller           método
     $router->addRoute('jugadores',      'GET',    'JugadorController', 'getJugadores'); 
     $router->addRoute('jugadores',      'POST',   'JugadorController', 'addJugador'); 
-    $router->addRoute('jugadores/:ID',  'GET',    'JugadorController', 'getjugadoresById'); 
+    $router->addRoute('jugadores/:ID',  'GET',    'JugadorController', 'getJugadoresById'); 
     $router->addRoute('jugadores/:ID',  'PUT',    'JugadorController', 'updateJugador'); 
     $router->addRoute('jugadores/:ID',  'DELETE', 'JugadorController', 'deleteJugadorbyID'); 
 
