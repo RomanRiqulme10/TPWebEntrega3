@@ -58,7 +58,7 @@ class JugadorController extends ApiController{
 
     }
 
-    public function getJugadoresbyID($params = []){
+    public function getJugadoresByID($params = []){
         
         $jugador = $this->model->getJugadorbyID($params[':ID']);
 
