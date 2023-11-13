@@ -77,7 +77,7 @@ class JugadorModel extends Model {
 
          
 
-            function ListProduc($adicional) {
+            function ListaJugadores($adicional) {
                 $query = $this->db->prepare("SELECT Nombre_Apellido, club_id, edad, goles FROM jugadores $adicional;");
                 $query->execute();
                 $jugadores = $query->fetchAll(PDO::FETCH_OBJ);

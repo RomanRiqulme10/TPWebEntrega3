@@ -49,7 +49,7 @@ class JugadorController extends ApiController{
 
 
       
-        $lista= $this->model->ListProduc($adicional);
+        $lista= $this->model->ListaJugadores($adicional);
         $this->view->response($lista, 200);
        
       ///////////////////////////////////////////////////////////////
@@ -87,7 +87,7 @@ class JugadorController extends ApiController{
         
       }
 
-      function add(){
+      function addJugador(){
 
         $body = $this->getData();
         $body = $this->getData();
@@ -111,25 +111,35 @@ class JugadorController extends ApiController{
     
         $id_jugador = $params[':ID'];
         $jugador = $this->model->getJugador($id_jugador);
-        
-        if ($jugador) {
+       
+        if (!$jugador) {
+          $this->view->response(['response' => 'El jugador no existe'],400);
+        }else {
             $body = $this->getData();
             $NombreApellido = $body->NombreApellido;
             $edad = $body->edad;
             $goles = $body->goles;
             $id_club = $body->id_club;
-                   
+                  
           $boolean = $this->model->updateJugador($id_jugador,$NombreApellido,$edad,$goles,$id_club);
-          
+
           if ($boolean) {
             $this->view->response(['response' => 'Jugador editado correctamente'],200);
           }else{
             $this->view->response(['response' => 'Ocurrio un problema al editar el jugador'],404);
           }
-    
+          }
         }
       }
 
-}
+
 
 ?>
+
+
+
+
+
+
+
+

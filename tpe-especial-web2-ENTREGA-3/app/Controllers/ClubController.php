@@ -19,26 +19,52 @@ class ClubController extends ApiController{
 
     }
 
-    public function showMenu() {
-
-        $clubes = $this->model->getClubes();
-        $this->viewAPI->response($clubes,200);
-        
-
-    }
-
     public function getClubes() {
 
         $clubes = $this->model->getClubes();
         $this->viewAPI->response($clubes,200);
+
+    }
+
+    function addCLub(){
+
+        $body = $this->getData();
+        $body = $this->getData();
+            $club = $body->club;
+            $id_club = $body->id_club;
         
+        
+        
+        $boolean = $this->model->addCLub($club,$id_club);
+        
+        if ($boolean) {
+          $this->view->response(['response' => 'CLub aniadido'],201);
+        }else{
+          $this->view->response(['response' => 'Ocurrio un problema para aniadir el club'],404);
+        }
+      }
 
-    }
-
-    public function deleteClub($params = []){
-        $club  =$this->model->getClub($params[':ID']);
-
-    }
+      function updateClub($params = []){
+    
+        $club_id = $params[':ID'];
+        $club = $this->model->getClub($club_id);
+        
+        if (!$club) {
+          $this->view->response(['response' => 'El Club No existe'],400);
+        }else {
+          $body = $this->getData();
+            $club = $body->club;
+            $boolean = $this->model->updateClub($club,$club_id);
+            if ($boolean) {
+              $this->view->response(['response' => 'club editado correctamente'],200);
+            }else{
+              $this->view->response(['response' => 'Ocurrio un problema al editar el club'],404);
+            }
+      
+        }
+         
+        
+      }
         
 }
 ?>
