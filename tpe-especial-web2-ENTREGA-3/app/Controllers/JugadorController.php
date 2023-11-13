@@ -70,7 +70,7 @@ class JugadorController extends ApiController{
 
     }
 
-    function deleteJugadorbyID($params = []) {
+    function deleteJugadorByID($params = []) {
 
         $jugador = $this->model->getJugador($params[':ID']);
         
