@@ -24,16 +24,6 @@ class JugadorModel extends Model {
                 return $jugadores;
 
             }
-            
-            public function getJugadoresClub($id){
-                
-                $query = $this->db->prepare('SELECT * FROM  jugadores WHERE club_id = ?');
-                $query->execute([$id]);
-                $jugadores = $query->fetchAll(PDO::FETCH_OBJ);
-                
-               
-                return $jugadores;
-            }
 
             public function getJugadorbyID($id) {
 
