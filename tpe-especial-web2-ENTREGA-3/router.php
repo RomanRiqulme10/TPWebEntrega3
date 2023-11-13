@@ -11,7 +11,7 @@
     $router->addRoute('jugadores',      'POST',   'JugadorController', 'addJugador'); 
     $router->addRoute('jugadores/:ID',  'GET',    'JugadorController', 'getJugadoresById'); 
     $router->addRoute('jugadores/:ID',  'PUT',    'JugadorController', 'updateJugador'); 
-    $router->addRoute('jugadores/:ID',  'DELETE', 'JugadorController', 'deleteJugadorbyID'); 
+    $router->addRoute('jugadores/:ID',  'DELETE', 'JugadorController', 'deleteJugadorByID'); 
 
 
     $router->addRoute('clubes',     'GET',    'ClubController', 'getClubes');
