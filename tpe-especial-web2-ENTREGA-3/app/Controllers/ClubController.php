@@ -26,6 +26,18 @@ class ClubController extends ApiController{
 
     }
 
+    public function getClubByID($params = []){
+        
+      $jugador = $this->model->getCLubByID($params[':ID']);
+
+      if(empty($jugador)){
+          $this->viewAPI->response( ['response' => 'Bad Request'],400);
+      }else {
+          $this->viewAPI->response($jugador, 200) ;
+      }
+
+    }
+
     function addCLub(){
 
         $body = $this->getData();
