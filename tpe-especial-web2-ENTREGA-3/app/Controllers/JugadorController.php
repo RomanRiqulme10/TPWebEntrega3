@@ -110,7 +110,7 @@ class JugadorController extends ApiController{
       function updateJugador($params = []){
     
         $id_jugador = $params[':ID'];
-        $jugador = $this->model->getJugador($id_jugador);
+        $jugador = $this->model->getJugadorbyID($id_jugador);
        
         if (!$jugador) {
           $this->view->response(['response' => 'El jugador no existe'],404);
