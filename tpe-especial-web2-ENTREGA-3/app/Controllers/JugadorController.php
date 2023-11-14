@@ -113,7 +113,7 @@ class JugadorController extends ApiController{
         $jugador = $this->model->getJugador($id_jugador);
        
         if (!$jugador) {
-          $this->view->response(['response' => 'El jugador no existe'],400);
+          $this->view->response(['response' => 'El jugador no existe'],404);
         }else {
             $body = $this->getData();
             $NombreApellido = $body->NombreApellido;
