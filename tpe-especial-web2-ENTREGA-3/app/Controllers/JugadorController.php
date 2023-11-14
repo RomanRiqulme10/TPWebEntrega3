@@ -90,7 +90,7 @@ class JugadorController extends ApiController{
       function addJugador(){
 
         $body = $this->getData();
-        $body = $this->getData();
+       
             $NombreApellido = $body->NombreApellido;
             $edad = $body->edad;
             $goles = $body->goles;
