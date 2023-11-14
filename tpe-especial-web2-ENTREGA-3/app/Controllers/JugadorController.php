@@ -52,7 +52,7 @@ class JugadorController extends ApiController{
         $lista= $this->model->ListaJugadores($adicional);
         $this->view->response($lista, 200);
        
-      ///////////////////////////////////////////////////////////////
+
       }
        
 
