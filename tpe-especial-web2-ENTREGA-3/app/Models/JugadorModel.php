@@ -59,7 +59,7 @@ class JugadorModel extends Model {
                 $query = $this->db->prepare("SELECT Nombre_Apellido, club_id, edad, goles FROM jugadores $adicional;");
                 $query->execute();
                 $jugadores = $query->fetchAll(PDO::FETCH_OBJ);
-                return $jugadores;//para que se pueda incluir 
+                return $jugadores;
             }
     }
         
