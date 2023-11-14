@@ -36,7 +36,7 @@ class JugadorController extends ApiController{
                     $sort = 'club_id';
                     break;
                 default:
-                    $this->view->response('Registro ' . $sort . ' incorrecto', 404);
+                    $this->view->response('Filtro' . $sort . ' incorrecto', 404);
                     break;
             }
             if ($order !== 'desc') {
