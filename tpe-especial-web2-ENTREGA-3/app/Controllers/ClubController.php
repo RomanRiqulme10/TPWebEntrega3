@@ -31,7 +31,7 @@ class ClubController extends ApiController{
       $club = $this->model->getCLubByID($params[':ID']);
 
       if(empty($club)){
-          $this->viewAPI->response( ['response' => 'Bad Request'],404);
+          $this->viewAPI->response( ['response' => 'Bad Request'],400);
       }else {
           $this->viewAPI->response($club, 200) ;
       }
