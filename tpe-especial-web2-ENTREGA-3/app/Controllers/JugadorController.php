@@ -63,7 +63,7 @@ class JugadorController extends ApiController{
         $jugador = $this->model->getJugadorbyID($params[':ID']);
 
         if(empty($jugador)){
-            $this->viewAPI->response( ['response' => 'Bad Request'],400);
+            $this->viewAPI->response( ['response' => 'Jugador No Encontrado'],404);
         }else {
             $this->viewAPI->response($jugador, 200) ;
         }
