@@ -59,7 +59,7 @@ class ClubController extends ApiController{
       function updateClub($params = []){
     
         $club_id = $params[':ID'];
-        $club = $this->model->getClub($club_id);
+        $club = $this->model->getCLubByID($club_id);
         
         if (!$club) {
           $this->view->response(['response' => 'El Club No existe'],400);
